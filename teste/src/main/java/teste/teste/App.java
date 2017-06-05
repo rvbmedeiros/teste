@@ -13,5 +13,9 @@ public class App {
 	public void f() {
 		return;
 	}
+	
+	public void g(){
+		
+	}
 
 }
