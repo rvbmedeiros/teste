@@ -6,8 +6,12 @@ package teste.teste;
  */
 public class App {
 
-	public void main(Integer i) {
-		System.out.println("versao inicial");
+	public void f2(){
+		
+	}
+	
+	public void f2(int a){
+		
 	}
 
 	public void f1() {
