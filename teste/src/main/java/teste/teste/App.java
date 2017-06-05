@@ -6,10 +6,7 @@ package teste.teste;
  */
 public class App 
 {
-    public static void main( String[] args )
-    {
-        System.out.println( "Helasdasloasdasdasd!" );
-    }
+
     
     public void main(String a){
     	System.out.println( "a" );
