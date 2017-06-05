@@ -21,7 +21,7 @@ public class App {
 		return;
 	}
 	
-	public void g(){
+	public void g(String s){
 		
 	}
 
