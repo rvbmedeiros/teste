@@ -10,4 +10,8 @@ public class App
     {
         System.out.println( "Helasdasloasdasdasd!" );
     }
+    
+    public void main(String a){
+    	System.out.println( "a" );
+    }
 }
