@@ -9,12 +9,10 @@ public class App {
 	public void master(){
 	}
 	
-	public void f(){
+	public void f(int a){
 		
-	public void master() {
-
 	}
-
+		
 	public void f() {
 		return;
 	}
