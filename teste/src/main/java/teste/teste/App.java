@@ -6,8 +6,12 @@ package teste.teste;
  */
 public class App {
 
-	public void master(){
-		
+	public void master() {
+
 	}
-	
+
+	public void f() {
+		return;
+	}
+
 }
