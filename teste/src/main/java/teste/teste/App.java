@@ -12,6 +12,7 @@ public class App {
 	
 	public void f(int a){
 		
+	}
 		
 	public void f() {
 		return;
