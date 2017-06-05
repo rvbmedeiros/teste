@@ -6,10 +6,12 @@ package teste.teste;
  */
 public class App {
 
-	public void master() {
+	public void master(){
 	}
-
 	
+	public void f(int a){
+	
+	}
 	
 	public void f() {
 		return;
@@ -17,6 +19,10 @@ public class App {
 	
 	public void g(){
 		return;
+	}
+	
+	public void g(){
+		
 	}
 
 }
