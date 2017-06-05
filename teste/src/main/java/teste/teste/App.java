@@ -18,4 +18,8 @@ public class App {
 
 	}
 
+	public void master(){
+		
+	}
+	
 }
