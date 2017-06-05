@@ -10,4 +10,8 @@ public class App {
 		System.out.println("versao inicial");
 	}
 	
+	public void f1(){
+		
+	}
+	
 }
