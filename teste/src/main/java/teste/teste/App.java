@@ -10,4 +10,8 @@ public class App {
 		
 	}
 	
+	public void f1(){
+		
+	}
+	
 }
