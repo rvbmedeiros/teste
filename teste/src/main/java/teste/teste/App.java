@@ -11,6 +11,12 @@ public class App {
 	
 	public void f(){
 		
+	public void master() {
+
 	}
-	
+
+	public void f() {
+		return;
+	}
+
 }
