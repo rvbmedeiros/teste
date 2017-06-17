@@ -9,7 +9,7 @@ $(function() {
 });
 
 function retrieveData() {
-	$.getJSON('/gantt/mock.json', {}, function(data) {
+	$.getJSON('mock.json', {}, function(data) {
 		gantt.parse(data);
 	});
 }
@@ -28,13 +28,9 @@ function createGantt() {
 			resize : true,
 			width : 100
 		}, {
-			name : "end_date",
-			label : "End time",
-			width : 100
-		}, {
 			name : "duration",
 			label : "Duration",
-			width : 100
+			width : 70
 		} ];
 		gantt.templates.task_text = function(start, end, task) {
 			return task.text;
@@ -59,9 +55,8 @@ function createGantt() {
 			if (date.getDay() == 0 || date.getDay() == 6)
 				return true;
 		};
-		gantt.config.work_time = true; // removes non-working time from
-		// calculations
-		gantt.skip_off_time = true; // hides non-working time in the chart
+		gantt.config.work_time = true;
+		gantt.skip_off_time = true;
 		gantt.config.autosize = "xy";
 		gantt.init("gantt_here");
 		retrieveData();
