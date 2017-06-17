@@ -5,60 +5,80 @@ $(function() {
 		if (cb.context.checked) {
 			retrieveData();
 		}
-	}, 1000 * 15 * 1);
+	}, 1000 * 60 * 1);
 });
 
 function retrieveData() {
-	$.getJSON('mock.json', {}, function(data) {
-		gantt.parse(data);
+	$.ajax({
+		url : "mock.json",
+		type : 'GET',
+		datatype : "json",
+		success : function(data) {
+			gantt.parse(data);
+		},
+		error : function(data) {
+			alert('Failed!');
+		},
+		beforeSend : setHeader
 	});
 }
 
-function createGantt() {
-	$(function() {
-		gantt.config.columns = [ {
-			name : "text",
-			label : "Task name",
-			width : 150,
-			resize : true,
-			tree : true
-		}, {
-			name : "start_date",
-			label : "Start time",
-			resize : true,
-			width : 100
-		}, {
-			name : "duration",
-			label : "Duration",
-			width : 70
-		} ];
-		gantt.templates.task_text = function(start, end, task) {
-			return task.text;
-		};
-		gantt.config.scale_unit = "month";
-		gantt.config.date_scale = "%F, %Y";
-		var daysStyle = function(date) {
-			var dateToStr = gantt.date.date_to_str("%D");
-			if (dateToStr(date) == "Sun" || dateToStr(date) == "Sat")
-				return "weekend";
+function setHeader(xhr) {
+	xhr.setRequestHeader('Content-Type', 'application/json');
+}
 
-			return "";
-		};
-		gantt.config.subscales = [ {
-			unit : "day",
-			step : 1,
-			css : daysStyle,
-			date : "%d"
-		} ];
-		gantt.config.keep_grid_width = true;
-		gantt.ignore_time = function(date) {
-			if (date.getDay() == 0 || date.getDay() == 6)
-				return true;
-		};
-		gantt.config.work_time = true;
-		gantt.skip_off_time = true;
-		gantt.config.autosize = "xy";
-		gantt.init("gantt_here");
-		retrieveData();
+function createGantt() {
+	gantt.config.columns = [ {
+		name : "holder",
+		label : "Owner",
+		width: "200",
+		resize : true,
+		tree : true
+	}, {
+		name : "duration",
+		label : "Duration",
+		resize : true,
+		width: "140"
+	} ];
+
+	gantt.config.date_grid = "%d %M %Y, %H:%i";
+	gantt.config.scale_unit = "hour";
+	gantt.config.date_scale = "%H";
+	gantt.config.duration_unit = "hour";
+	gantt.config.duration_step = 1;
+
+	gantt.setWorkTime({
+		hours : [ 8, 12, 13, 17 ]
 	});
+
+	gantt.config.work_time = true;
+	gantt.skip_off_time = true;
+
+	gantt.templates.scale_cell_class = function(date) {
+		if (date.getDay() == 0 || date.getDay() == 6) {
+			return "weekend";
+		}
+	};
+	gantt.templates.task_cell_class = function(task, date) {
+		if (!gantt.isWorkTime(date))
+			return "outhour";
+		return "";
+	};
+	gantt.ignore_time = function(date) {
+		if (date.getDay() == 0 || date.getDay() == 6)
+			return true;
+	};
+
+	gantt.config.subscales = [ {
+		unit : "day",
+		step : 1,
+		date : "%d %M %Y"
+	} ];
+
+	gantt.config.keep_grid_width = true;
+	gantt.config.scale_height = 54;
+	gantt.config.autosize = "xy";
+
+	gantt.init("gantt_here");
+	retrieveData();
 }
