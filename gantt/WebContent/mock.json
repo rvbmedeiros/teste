@@ -1,0 +1,56 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "text": "Yuji",
+      "start_date": "01-04-2013",
+      "duration": 30,
+      "progress": 1,
+      "open": true
+    },
+    {
+      "id": 2,
+      "text": "PHD-XXXX",
+      "start_date": "01-04-2013",
+      "duration": 5,
+      "progress": 1,
+      "open": true,
+      "parent": 1
+    },
+    {
+      "id": 4,
+      "text": "Real",
+      "start_date": "04-04-2013",
+      "duration": 5,
+      "progress": 1,
+      "open": true,
+      "parent": 2
+    },
+    {
+      "id": 5,
+      "text": "Mauricio",
+      "start_date": "01-04-2013",
+      "duration": 30,
+      "progress": 1,
+      "open": true
+    },
+    {
+      "id": 6,
+      "text": "PHD-XXXX",
+      "start_date": "03-04-2013",
+      "duration": 5,
+      "progress": 1,
+      "open": true,
+      "parent": 5
+    },
+    {
+      "id": 8,
+      "text": "Real",
+      "start_date": "06-04-2013",
+      "duration": 8,
+      "progress": 0.2,
+      "open": true,
+      "parent": 6
+    }
+  ]
+}
