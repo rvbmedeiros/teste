@@ -62,6 +62,7 @@ function createGantt() {
 		gantt.config.work_time = true; // removes non-working time from
 		// calculations
 		gantt.skip_off_time = true; // hides non-working time in the chart
+		gantt.config.autosize = "xy";
 		gantt.init("gantt_here");
 		retrieveData();
 	});
