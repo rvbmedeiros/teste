@@ -16,37 +16,37 @@
         },{
             "id": 3,
             "holder": "Planejado",
-            "start_date": "19-06-2017 13:00",
+            "start_date": "19-06-2017 08:00",
             "open": true,
-            "duration": 8,
+            "duration": 4,
             "parent": 2
         },{
             "id": 4,
             "holder": "Executado",
-            "start_date": "20-06-2017 15:00",
+            "start_date": "19-06-2017 15:00",
             "open": true,
-            "duration": 8,
+            "duration": 4,
             "parent": 2
         },{
             "id": 5,
             "holder": "Basic Task 2",
-            "start_date": "23-06-2017 08:00",
+            "start_date": "21-06-2017 08:00",
             "open": true,
             "duration": 0,
             "parent": 1
         },{
             "id": 6,
             "holder": "Planejado",
-            "start_date": "23-06-2017 08:00",
+            "start_date": "21-06-2017 08:00",
             "open": true,
-            "duration": 10,
+            "duration": 8,
             "parent": 5
         },{
             "id": 7,
             "holder": "Executado",
-            "start_date": "24-06-2017 13:00",
+            "start_date": "22-06-2017 13:00",
             "open": true,
-            "duration": 10,
+            "duration": 8,
             "parent": 5
         }],
     "links": []
